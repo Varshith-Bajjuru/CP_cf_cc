@@ -269,11 +269,17 @@ add_executable(. StringMaximizing.cpp main.cpp "wierd Problem.cpp"
         AnnaAndvalentinesGift.cpp
         DancesHard.cpp
         MeximumArray.cpp
+        Round1028.cpp
+        ComeALittleCloser.cpp
+        PhenoixAndBeauty.cpp
+        SubsequencesHate.cpp
+        rotatingMatching.cpp
+        mochaAndDiana.cpp
+        webOfLies.cpp
 )
 
 add_executable(varshith2
-        DancesHard.cpp
-        MeximumArray.cpp
-        #        unPleasentStrings.cpp
-        #        floorOrceil.cpp
+#        MeximumArray.cpp
+        webOfLies.cpp
+        #        ComeALittleCloser.cpp
 )

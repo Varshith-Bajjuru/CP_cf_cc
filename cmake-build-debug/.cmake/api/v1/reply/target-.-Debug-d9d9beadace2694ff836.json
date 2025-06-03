@@ -322,7 +322,14 @@
 				268,
 				269,
 				270,
-				271
+				271,
+				272,
+				273,
+				274,
+				275,
+				276,
+				277,
+				278
 			]
 		}
 	],
@@ -629,7 +636,14 @@
 				268,
 				269,
 				270,
-				271
+				271,
+				272,
+				273,
+				274,
+				275,
+				276,
+				277,
+				278
 			]
 		},
 		{
@@ -2271,6 +2285,48 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "MeximumArray.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Round1028.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ComeALittleCloser.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "PhenoixAndBeauty.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "SubsequencesHate.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "rotatingMatching.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mochaAndDiana.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "webOfLies.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
