@@ -276,10 +276,83 @@ add_executable(. StringMaximizing.cpp main.cpp "wierd Problem.cpp"
         rotatingMatching.cpp
         mochaAndDiana.cpp
         webOfLies.cpp
+        swapsII.cpp
+        NumberGame.cpp
+        AccidentalVictory.cpp
+        NotAssigning.cpp
+        ProductiveMeeting.cpp
+        AvoidPrimes.cpp
+        UnstableString.cpp
+        FindTheArray.cpp
+        pheonixAndTowers.cpp
+        PalindromeColoring.cpp
+        wonderfullColoring.cpp
+        epicTransformation.cpp
+        IHate111.cpp
+        DominantCharecter.cpp
+        ElementExtermination.cpp
+        Team.cpp
+        kefkaAndCats.cpp
+        flowers.cpp
+        Workout.cpp
+        WhereIsPizza.cpp
+        EqualValues.cpp
+        Retailation.cpp
+        LongtailHedgehog.cpp
+        KireiAttackstheEstate.cpp
+        CCStarters190.cpp
+        contest1030.cpp
+        SegmentTreesLC.cpp
+        EdgyTrees.cpp
+        ZeroArray.cpp
+        balancedBitstring.cpp
+        PatheticMexs.cpp
+        ZeroQuantity.cpp
+        KcompleteWord.cpp
+        poweredAddition.cpp
+        AppleTreeTraversing.cpp
+        kAmazingNumber.cpp
+        mortalCombatTower.cpp
+        LabourOfHercules.cpp
+        EasternExhibition.cpp
+        AgagaXOR.cpp
+        LineEmpire.cpp
+        factorialAndPowersOfTwo.cpp
+        contestCC191.cpp
+        PalindromeBasis.cpp
+        controllers.cpp
+        TeaTasting.cpp
+        DataStructureFan.cpp
+        strangeSort.cpp
+        cf1033.cpp
+        GoodString.cpp
+        cfSubsequence.cpp
+        AndMatching.cpp
+        div2Con.cpp
+        maximumWidth.cpp
+        rings.cpp
+        pythogoredTriplets.cpp
+        IntrestingStory.cpp
+        AirConditioners.cpp
+        dulicAndKenya.cpp
+        contestCC.cpp
+        Backspace.cpp
+        IntegerShops.cpp
+        runningForGold.cpp
+        IntrestingFunction.cpp
+        Potions.cpp
+        PlusAndMultiply.cpp
+        EqualizeTheArray.cpp
+        BfsForGcdChecking.cpp
+        LostSoul.cpp
 )
 
-add_executable(varshith2
-#        MeximumArray.cpp
-        webOfLies.cpp
-        #        ComeALittleCloser.cpp
+add_executable(varsh
+#        UnstableString.cpp
+#        WhereIsPizza.cpp
+#        Workout.cpp
+#        LongtailHedgehog.cpp
+#        cf1033.cpp
+        BfsForGcdChecking.cpp
+        LostSoul.cpp
 )

@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "varshith2.exe"
+			"path" : "varsh.exe"
 		},
 		{
-			"path" : "varshith2.pdb"
+			"path" : "varsh.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 281,
+				"line" : 350,
 				"parent" : 0
 			}
 		]
@@ -52,11 +52,12 @@
 			},
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
-	"id" : "varshith2::@6890427a1f51a3e7e1df",
+	"id" : "varsh::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -76,8 +77,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "varshith2",
-	"nameOnDisk" : "varshith2.exe",
+	"name" : "varsh",
+	"nameOnDisk" : "varsh.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -89,7 +90,8 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
@@ -98,7 +100,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "webOfLies.cpp",
+			"path" : "BfsForGcdChecking.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "LostSoul.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

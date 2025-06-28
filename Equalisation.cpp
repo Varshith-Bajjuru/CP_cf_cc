@@ -1,79 +1,65 @@
 #include <bits/stdc++.h>
-#include "set"
-#include "unordered_map"
-#include "algorithm"
 using namespace std;
 
-#define fast_io() ios_base::sync_with_stdio(false); cin.tie(NULL);
-#define ll long long
+#define int long long
+#define fast_io() ios_base::sync_with_stdio(false); cin.tie(NULL);cout.tie(NULL);
 #define vi vector<int>
-#define vll vector<ll>
 #define pii pair<int, int>
-#define pll pair<ll, ll>
 #define all(v) (v).begin(), (v).end()
 #define rep(i, a, b) for (int i = a; i < b; i++)
-#define endl '\n';
+#define endl '\n'
 
-ll MOD = 1e9+7;
+int MOD = 998244353;
+int inf = 1e18;
+int dp[60][60][60];
 
-ll gcd(ll a, ll b) {
-    if (b == 0) {
-        return a;
-    }
-    return gcd(b, a % b);
-}
-
-bool isPowerOf2(ll n) {
-    return (n > 0) && ((n & (n - 1)) == 0);
-}
-
-int digits(ll n){
-    int cnt = 0;
-    while (n != 0){
-        n = n/10;
-        cnt++;
-    }
-    return cnt;
-}
-
-ll power(int a,int b){
-    if (b == 0) return 1;
-    ll x  = power(a,b/2);
-    if (b%2 == 0){
-        return x*x;
-    } else{
-        return x*x*a;
-    }
-}
-
-ll powermod(ll x, ll y, ll p) {
-    ll res = 1;
-    x = x % p;
-    if (x == 0) return 0;
-    while (y > 0) {
-        if (y & 1)
-            res = (res * x) % p;
-        y = y >> 1;
-        x = (x * x) % p;
-    }
-    return res;
-}
-
-void solve() {
-    ll x , y;
-    cin >> x >> y;
-    ll ans = 0;
-    if (x == y){
-        cout << ans << endl;
-    }
-
-
-}
-
-int main() {
+void setIO(){
     fast_io();
-    int t;
+#ifndef ONLINE_JUDGE
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+#endif
+}
+
+int compute(int a, int b, int k) {
+    if (a == 0 && b == 0) return 0;
+    if (k == 0) return inf;
+    if (dp[a][b][k] != inf) return dp[a][b][k];
+
+    int notPick = compute(a, b, k - 1);
+    int pick1 = inf, pick2 = inf;
+    if (a >= k) pick1 = (1LL << k) + compute(a - k, b, k - 1);
+    if (b >= k) pick2 = (1LL << k) + compute(a, b - k, k - 1);
+
+    return dp[a][b][k] = min({notPick, pick1, pick2});
+}
+
+
+void solve(){
+    int x, y;
+    cin >> x >> y;
+    int ans = inf;
+    for (int i = 57; i >= 0; --i) {
+        for (int j = 57; j >= 0 ; --j) {
+            if ((x>>i) == (y>>j)){
+                ans = min(ans, compute(i,j,57));
+            }
+        }
+    }
+    cout << ans << endl;
+}
+
+int32_t main() {
+    setIO();
+    int t = 1;
     cin >> t;
+    for (auto & i : dp) {
+        for (auto & j : i) {
+            for (int & k : j) {
+                k = inf;
+            }
+        }
+    }
     while (t--) {
         solve();
     }

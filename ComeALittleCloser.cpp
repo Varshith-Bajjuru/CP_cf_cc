@@ -1,116 +1,52 @@
 #include <bits/stdc++.h>
-#include "set"
-#include <cmath>
-#include "unordered_map"
-#include "algorithm"
 using namespace std;
 
-#define int long long
-#define fast_io() ios_base::sync_with_stdio(false); cin.tie(NULL);
-#define vi vector<int>
-#define vll vector<ll>
-#define pii pair<int, int>
-#define pll pair<ll, ll>
-#define all(v) (v).begin(), (v).end()
-#define rep(i, a, b) for (int i = a; i < b; i++)
-#define endl '\n';
+using ll = long long;
+using ld = long double;
+#define INF(t) numeric_limits<t>::max()
 
-int MOD = 998244353;
+int n;
 
-bool isPowerOf2(int n) {
-    return (n > 0) && ((n & (n - 1)) == 0);
+ll rect(int mn_x, int mx_x, int mn_y, int mx_y) {
+    ll h = mx_x - mn_x + 1, w = mx_y - mn_y + 1;
+    if(h*w < n) return min((h+1)*w, h*(w+1));
+    return h*w;
 }
 
-int digits(int n){
-    int cnt = 0;
-    while (n != 0){
-        n = n/10;
-        cnt++;
-    }
-    return cnt;
-}
+int main() {
+    ios_base::sync_with_stdio(false); cin.tie(0);
 
-int power(int a, int b){
-    if (b == 0) return 1;
-    int x  = power(a, b/2);
-    if (b % 2 == 0){
-        return x * x;
-    } else{
-        return x * x * a;
-    }
-}
+    int tc; cin >> tc;
+    while(tc--) {
+        cin >> n;
+        vector<pair<int,int>> x(n), y(n);
 
-bool isPrime(int n) {
-    if (n <= 1) return false;
-    if (n <= 3) return true;
-    if (n % 2 == 0 || n % 3 == 0) return false;
-    for (int i = 5; i * i <= n; i += 6) {
-        if (n % i == 0 || n % (i + 2) == 0)
-            return false;
-    }
-    return true;
-}
-
-int powermod(int x, int y, int p) {
-    int res = 1;
-    x = x % p;
-    if (x == 0) return 0;
-    while (y > 0) {
-        if (y & 1)
-            res = (res * x) % p;
-        y = y >> 1;
-        x = (x * x) % p;
-    }
-    return res;
-}
-
-int bitCount(int num) {
-    return num ? (int) log2(num) + 1 : 0;
-}
-
-vi sieveOfEratosthenes(int n) {
-    vector<bool> isPrime(n + 1, true);
-    isPrime[0] = isPrime[1] = false;
-    for (int i = 2; i * i <= n; ++i) {
-        if (isPrime[i]) {
-            for (int j = i * i; j <= n; j += i)
-                isPrime[j] = false;
+        for(int i = 0; i < n; i++) {
+            cin >> x[i].first >> y[i].first;
+            x[i].second = y[i].second = i;
         }
-    }
-    vi primes;
-    for (int i = 0; i <= n; ++i) {
-        if (isPrime[i]) primes.push_back(i);
-    }
 
-    return primes;
-}
+        sort(x.begin(), x.end());
+        sort(y.begin(), y.end());
 
-int gcd(int a, int b) {
-    if (b == 0) {
-        return a;
-    }
-    return gcd(b, a % b);
-}
+        ll ans = rect(x[0].first, x[n-1].first, y[0].first, y[n-1].first);
 
-int lcm(int a, int b) {
-    return (a / __gcd(a, b)) * b;
-}
+        if(n == 1) {
+            cout << ans << "\n";
+            continue;
+        }
 
-void solve(){
-    int n;cin >> n;
-    vector<pair<int,int>> v(n);
-    for (int i = 0; i < n; ++i) {
-        cin >> v[i].first >> v[i].second;
+        set<int> ii = {x[0].second,x[n-1].second, y[0].second, y[n-1].second};
+        for (int i : ii) {
+            int mnx = x[0].second == i ? x[1].first : x[0].first;
+            int mxx = x[n-1].second == i ? x[n-2].first : x[n-1].first;
+            int mny = y[0].second == i ? y[1].first : y[0].first;
+            int mxy = y[n-1].second == i ? y[n-2].first : y[n-1].first;
+            ans = min(ans, rect(mnx, mxx, mny, mxy));
+        }
+
+        cout << ans << "\n";
     }
 
-}
-
-int32_t main() {
-    fast_io();
-    int t = 1;
-    cin >> t;
-    while (t--) {
-        solve();
-    }
     return 0;
 }
